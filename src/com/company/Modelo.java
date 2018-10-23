@@ -1,7 +1,7 @@
 package com.company;
 
 import com.company.base.Pokemon;
-import com.company.util.Operator;
+import com.company.util.Util;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -13,7 +13,7 @@ public class Modelo {
     public HashMap<String, Pokemon> pokemones;
 
     public Modelo() throws IOException, ClassNotFoundException{
-        pokemones = new File (RUTA_POKEMONES).exists()? Operator.deserialize(RUTA_POKEMONES) : new HashMap<>();
+        pokemones = new File (RUTA_POKEMONES).exists()? Util.deserialize(RUTA_POKEMONES) : new HashMap<>();
     }
 
     public boolean guardarPokemon(Pokemon pokemon) throws IOException{
@@ -26,7 +26,7 @@ public class Modelo {
     }
 
     private void guardarEnDisco() throws IOException{
-        Operator.serialize(RUTA_POKEMONES, pokemones);
+        Util.serialize(RUTA_POKEMONES, pokemones);
     }
 
     public void eliminarPokemon(Pokemon pokemon){
