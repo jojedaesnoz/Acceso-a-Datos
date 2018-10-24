@@ -37,12 +37,23 @@ public class Util<T> {
     }
 
     public static void copiarImagen(String rutaOrigen, String nombreDestino) throws IOException {
+        String rutaDestino = System.getProperty("user.dir") + File.separator + "imagenes" + File.separator + nombreDestino;
+        copiarFichero(rutaOrigen, rutaDestino);
+    }
+
+    public static void copiarFichero(String rutaOrigen, String rutaDestino) throws IOException {
         Path origen = FileSystems.getDefault().getPath(rutaOrigen);
-
-        FileOutputStream destino = new FileOutputStream (
-                new File(System.getProperty("user.dir") +
-                        File.separator + "imagenes" + File.separator + nombreDestino));
-
+        FileOutputStream destino = new FileOutputStream(new File(rutaDestino));
         Files.copy(origen, destino);
     }
+
+//    public static void copiarImagen(String rutaOrigen, String nombreDestino) throws IOException {
+//        Path origen = FileSystems.getDefault().getPath(rutaOrigen);
+//
+//        FileOutputStream destino = new FileOutputStream (
+//                new File(System.getProperty("user.dir") +
+//                        File.separator + "imagenes" + File.separator + nombreDestino));
+//
+//        Files.copy(origen, destino);
+//    }
 }
