@@ -16,16 +16,12 @@ public class Modelo {
         pokemones = new File (RUTA_POKEMONES).exists()? Util.deserialize(RUTA_POKEMONES) : new HashMap<>();
     }
 
-    public boolean guardarPokemon(Pokemon pokemon) throws IOException{
-        if (!pokemones.containsKey(pokemon.getNombre())){
-            pokemones.put(pokemon.getNombre(), pokemon);
-            guardarEnDisco();
-            return true;
-        }
-        else return false;
+    public void guardarPokemon(Pokemon pokemon) throws IOException{
+        pokemones.put(pokemon.getNombre(), pokemon);
+        guardarEnDisco();
     }
 
-    private void guardarEnDisco() throws IOException{
+    public void guardarEnDisco() throws IOException{
         Util.serialize(RUTA_POKEMONES, pokemones);
     }
 

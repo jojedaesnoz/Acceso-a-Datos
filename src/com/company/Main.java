@@ -2,8 +2,6 @@ package com.company;
 
 import com.company.ui.Vista;
 
-import java.io.IOException;
-
 public class Main {
 
     public static void main(String[] args) {

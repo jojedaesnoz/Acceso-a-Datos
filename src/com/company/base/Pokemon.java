@@ -1,6 +1,5 @@
 package com.company.base;
 
-import java.io.File;
 import java.io.Serializable;
 
 public class Pokemon implements Serializable {
