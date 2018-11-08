@@ -69,7 +69,7 @@ public class Controlador implements MouseListener {
                 return;
             }
             // Si venimos origen editar, borra el original antes de guardar
-            if (origen == Origen.editar)
+            if (origen == editar)
                 modelo.pokemones.remove(vista.lPokemon.getSelectedValue().getNombre());
 
             // Guardar y restablecer
@@ -93,7 +93,7 @@ public class Controlador implements MouseListener {
             }
 
             // Que seleccione al que estaba antes en la lista
-            vista.lPokemon.setSelectedIndex(indice>0?indice-1:0);
+            vista.lPokemon.setSelectedIndex(indice > 0 ? indice - 1: 0);
             modoEdicion(false);
         });
 
@@ -197,18 +197,16 @@ public class Controlador implements MouseListener {
         // Botones
         if (activo){
             vista.btNuevo.setEnabled(false);
-            vista.btEditar.setEnabled(false);
             vista.btGuardar.setEnabled(true);
             vista.btCancelar.setEnabled(true);
-            vista.btEliminar.setEnabled(false);
         }
         else {
             vista.btNuevo.setEnabled(true);
-            vista.btEditar.setEnabled(false);
             vista.btGuardar.setEnabled(false);
             vista.btCancelar.setEnabled(false);
-            vista.btEliminar.setEnabled(false);
         }
+        vista.btEditar.setEnabled(false);
+        vista.btEliminar.setEnabled(false);
     }
 
     @Override

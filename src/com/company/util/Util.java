@@ -1,6 +1,7 @@
 package com.company.util;
 
 
+import javax.swing.*;
 import java.io.*;
 import java.nio.file.FileSystems;
 import java.nio.file.Files;
@@ -45,6 +46,22 @@ public class Util<T> {
         Path origen = FileSystems.getDefault().getPath(rutaOrigen);
         FileOutputStream destino = new FileOutputStream(new File(rutaDestino));
         Files.copy(origen, destino);
+    }
+
+    public static void mensajeInformacion(String titulo, String mensaje) {
+        JOptionPane.showMessageDialog(null, mensaje, titulo, JOptionPane.INFORMATION_MESSAGE);
+    }
+
+    public static void mensajeInformacion(String mensaje) {
+        JOptionPane.showMessageDialog(null, mensaje, "Información", JOptionPane.INFORMATION_MESSAGE);
+    }
+
+    public static void mensajeError(String titulo, String mensaje) {
+        JOptionPane.showMessageDialog(null, mensaje, titulo, JOptionPane.ERROR_MESSAGE);
+    }
+
+    public static void mensajeError(String mensaje) {
+        JOptionPane.showMessageDialog(null, mensaje, "Información", JOptionPane.ERROR_MESSAGE);
     }
 
 //    public static void copiarImagen(String rutaOrigen, String nombreDestino) throws IOException {

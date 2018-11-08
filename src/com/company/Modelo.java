@@ -38,6 +38,7 @@ public class Modelo {
 
 
 
+
     public ArrayList<Pokemon> getPokemones(){
         return new ArrayList<>(pokemones.values());
     }
